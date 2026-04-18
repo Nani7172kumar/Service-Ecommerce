@@ -1,0 +1,160 @@
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero p {
+  color: #cbd5e1;
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+/* HERO BUTTONS */
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.hero-buttons button {
+  padding: 12px 28px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons button:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: #2563eb;
+}
+
+.hero-buttons .secondary {
+  background: transparent;
+  border: 1px solid white;
+}
+
+.hero-buttons .secondary:hover {
+  background: white;
+  color: black;
+}
+
+/* SECTION */
+.section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* GRID */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* CARDS */
+.feature-card,
+.service-card {
+  background: white;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.feature-card {
+  padding: 25px;
+  text-align: center;
+}
+
+.service-card {
+  text-align: center;
+}
+
+/* HOVER EFFECT */
+.feature-card:hover,
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* ICON */
+.icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* IMAGE */
+.service-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+/* CONTENT */
+.service-content {
+  padding: 15px;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  background: #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+/* PRICE */
+.price {
+  color: #2563eb;
+  font-weight: bold;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* BUTTON */
+.service-content button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.service-content button:hover {
+  background: #2563eb;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+}

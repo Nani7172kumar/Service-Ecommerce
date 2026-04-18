@@ -1,0 +1,58 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0f172a;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* LOGO */
+.navbar h2 {
+  cursor: pointer;
+}
+
+/* LINKS CONTAINER */
+.nav-links {
+  display: flex;              /* IMPORTANT */
+  align-items: center;
+  gap: 25px;                 /* THIS fixes spacing */
+}
+
+/* LINKS */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #3b82f6;
+}
+
+/* BUTTON */
+.nav-links button {
+  padding: 6px 12px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.nav-links button:hover {
+  background: #2563eb;
+}
+
+/* USER BADGE */
+.user-badge {
+  background: #1e293b;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+}

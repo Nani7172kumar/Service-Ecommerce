@@ -1,35 +1,56 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from "react-router-dom";
+import "../styles/navbar.css";
 
 export default function Navbar() {
-  const navigate = useNavigate()
-  const user = JSON.parse(localStorage.getItem('user') || '{}')
-  const token = localStorage.getItem('token')
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem("user") || "{}");
+  const token = localStorage.getItem("token");
 
   const logout = () => {
-    localStorage.clear()
-    navigate('/login')
-  }
+    localStorage.clear();
+    navigate("/login");
+  };
 
   return (
-    <nav className="navbar navbar-dark px-4 py-3" style={{ background: '#1a1a2e' }}>
-      <Link className="navbar-brand fw-bold fs-4" to="/">EasyService</Link>
-      <div className="d-flex gap-3 align-items-center">
+    <nav className="navbar">
+      <h2 className="logo" onClick={() => navigate("/")}>
+        EasyService
+      </h2>
+
+      <div className="nav-links">
         {!token ? (
           <>
-            <Link className="text-white text-decoration-none" to="/login">Login</Link>
-            <Link className="btn btn-primary btn-sm" to="/register">Register</Link>
+            <Link to="/login">Login</Link>
+            <button onClick={() => navigate("/register")}>
+              Register
+            </button>
           </>
         ) : (
           <>
-            {user.role === 'admin' && <Link className="text-white text-decoration-none" to="/admin">Admin Panel</Link>}
-            {user.role === 'vendor' && <Link className="text-white text-decoration-none" to="/vendor">My Dashboard</Link>}
-            {user.role === 'user' && <Link className="text-white text-decoration-none" to="/services">Services</Link>}
-            {user.role === 'user' && <Link className="text-white text-decoration-none" to="/my-bookings">My Bookings</Link>}
-            <span className="badge bg-secondary">Hi, {user.name}</span>
-            <button className="btn btn-outline-light btn-sm" onClick={logout}>Logout</button>
+            {user.role === "admin" && (
+              <Link to="/admin">Admin Panel</Link>
+            )}
+
+            {user.role === "vendor" && (
+              <Link to="/vendor">My Dashboard</Link>
+            )}
+
+            {user.role === "user" && (
+              <>
+                <Link to="/services">Services</Link>
+                <Link to="/my-bookings">My Bookings</Link>
+              </>
+            )}
+
+            <span className="user-badge">Hi, {user.name}</span>
+
+            <button className="logout" onClick={logout}>
+              Logout
+            </button>
           </>
         )}
       </div>
     </nav>
-  )
+  );
 }
